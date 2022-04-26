@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+<body>
+    
+    <h1>    StudentId: <%= studentId %></h1>
+    <% for (var key in certificate) { %>
+        <p><h3>Degree: <%= certificate[key].title %> </h3> </p>
+            <p>HashLink: <a href="https://ipfs.io/ipfs/<%= certificate[key].ipfsHash  %>"><%= certificate[key].ipfsHash  %></a></p>
+    <% } %>
+
+    
+    
+
+    
+
+</body>
+</html>

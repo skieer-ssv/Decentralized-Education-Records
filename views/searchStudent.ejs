@@ -2,19 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPFS NODE</title>
+    <title>Student Educational Records</title>
 </head>
 <body>
-    <h1>Upload file </h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <h1>Search for student </h1>
+    <form action="/certificate" method="POST" enctype="multipart/form-data">
         <label>Student ID</label>
         <input type="text" name="studentId">
         <br><br>
-        <label>Filename</label>
-        <input type="text" name="fileName">
-        <br><br>
-        <input type="file" name="file">
-        <br><br>
+      
         <input type="submit" value = "Submit">
     </form>
 
