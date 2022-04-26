@@ -1,0 +1,358 @@
+/* =================== NAV BAR ================================*/
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+hr.grey {
+    width: 85%;
+    margin: auto;
+    border: 1px solid #77777769;
+}
+
+.display-n {
+    display: none !important;
+}
+
+.blue-horizontal {
+    background: linear-gradient(90deg, #01CFFE, #3780D7) !important;
+    color: white !important;
+}
+
+.blue-vertical {
+    background: linear-gradient(#3780D7, #01CFFE) !important;
+    color: white !important;
+}
+
+.blue-vertical-op {
+    background: linear-gradient(#01CFFE, #3780D7) !important;
+    color: white !important;
+}
+
+.shadow {
+    box-shadow: 0 6px 10px 5px rgba(125, 94, 94, 0.18);
+    border: none;
+}
+
+.btn {
+  text-align: center;
+  box-sizing: border-box;
+  color: black;
+}
+
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.btn span {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  
+  animation: ripple 1s;
+  opacity: 0;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+#sidebarCollapse {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+#sidebarCollapse svg path {
+    fill: #387ED6;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: #FFF;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .mCSB_container {
+    height: 100%;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+
+#sidebar .sidebar-header .circle-profile {
+    width: 125px;
+    height: 125;
+    margin-top: 45px;
+    border-radius: 50%;
+    border: 0.3px solid #777777;
+}
+
+#sidebar .sidebar-header .circle-profile img {
+    width: 100%;
+}
+
+#sidebar ul.components {
+    padding: 20px;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 15px;
+    display: block;
+    color: #6E6E6E;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+    color:#387ED6;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color:#387ED6;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#sidebar ul.CTAs a {
+    text-align: center;
+    background-color: #387ED6;
+    font-size: 0.9em !important;
+    color: #fff;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+/* ====================================== chat ===============================================*/
+
+.not-box {
+    padding: 15px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    background-color: #DFF3FA;
+    border-radius: 10px;
+}
+
+/*.not-box p {
+    margin-bottom: 0;
+    font-size: 
+}*/
+
+.not-box img {
+    background-color: #fff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ==================================== Home Page ===============================================*/
+
+.category .btn {
+    color: #777777;
+}
+
+.category .btn:hover {
+    background: linear-gradient(90deg, #01CFFE, #3780D7) !important;
+    color: white !important;
+}
+
+.post {
+    position: relative;
+    border-radius: 10px;
+}
+
+.post button.btn.blue-vertical {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.post p {
+    font-size: 0.7rem;
+}
+
+#home .post button.btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom-right-radius: 10px;
+}
+
+/* ================================ Add Job ===================================================== */
+.addjob form {
+    min-width: 500px;
+    margin: auto;
+}
+
+/* ================================== Transaction ================================================*/
+.bill-wrap {
+        width: 35px;
+    padding: 10px;
+    background: #DFF3FA;
+    border-radius: 50%;
+}
+
+/* =============================== Profile ======================================================*/
+.company-detail img {
+    height: 27px;
+    width: 26px;
+    margin-right: 10px;
+}
+
+.profile .not-box {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.review img {
+    height: auto;
+    width: 10px;
+}
+
+
+
+.search-container
+{
+  padding: 5px;
+  border-radius: 50px;
+  border:0;outline:0;
+}
