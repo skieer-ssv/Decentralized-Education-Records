@@ -7,7 +7,7 @@ const {deployContract} = require('./scripts/deployContract');
 const { addFilestoIpfs, getFileFromIpfs } = require('./scripts/ipfsScript');
 const {getCertificate, uploadCertificateToContract} = require("./scripts/contractFunctions");
 const { uploadtoMongo } = require('./scripts/connectMongo');
-const PORT = 3000;
+const PORT = process.env.PORT||3000;
 
 const app = express();
   
