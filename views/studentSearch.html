@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
 
-    <title>Appcruit | DashBoard</title>
+    <title>DER | Search</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -27,56 +27,7 @@
 
 <body>
 
-    <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div id="dismiss">
-                <i><img src="assets/images/close.svg"></i>
-            </div>
-
-            <div class="sidebar-header text-center">
-            	<div class="d-flex justify-content-center">
-	            	<div class="circle-profile">
-	            		<img src="assets/images/profile-icon.png">
-	            	</div>
-	            </div>
-                <h5>Job Seeker</h5>
-                <a href="#">Seeker@gmail.com</a>
-            </div>
-            <hr class="grey">
-
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Job</a>
-                </li>
-					<!-- <li>
-                    <a href="#">About</a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li> -->
-                <li><a href="#">Chats</a></li>
-                <li><a href="#">Transactions</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help & Support</a></li>
-            </ul>
-
-            <ul class="list-unstyled CTAs mb-0">
-                <li>
-                    <a href="#" class="download">Logout</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+ 
 
     <!-- Page Content  -->
     <div id="content">
@@ -112,189 +63,18 @@
             <div class="row category tab-pills">               
                 <div class="post shadow  p-3 justify-content-center" style="width: 1500px;" >
                         <div class="col-md-12 align-self-center">
-                            <input class="input100" type="text" name="seeksearch" placeholder="Enter Student ID" size="126px" style="border: hidden; ">
+                            <form action="/certificate" method="POST" enctype="multipart/form-data">
+                            <input class="input100" type="text" name="studentId" placeholder="Enter Student ID" size="126px" style="border: hidden; ">
                             <a href="" style="color: #262626;"><i class="fas fa-search" style="float: right; margin-top: 5px; "></i></a>
+                            <input type="submit" value = "Submit">
+                            </form>
 					        <span class="focus-input100"></span>
                         </div>       
                 </div>
             </div>
 
-            <div class="info tab-content">
-                <div class="tab" id="posted">
-                    <div class="post shadow my-5 p-3">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 align-self-center">
-                                <h3>Qual 1</h3>
-                                <p>Year 20xx-20xx</p>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <h6>info</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus porta est, sit amet elementum enim dapibus in. Quisque et purus tincidunt, facilisis massa quis, mollis est. Vestibulum tincidunt dignissim magna at ullamcorper. Donec magna turp@1X.png</p>
-                            </div>
-
-                        </div>
-                        <button class="btn blue-vertical">></button>
-                    </div>
-                    <div class="post shadow my-5 p-3">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 align-self-center">
-                                <h3>Qual 1</h3>
-                                <p>Year 20xx-20xx</p>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <h6>info</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus porta est, sit amet elementum enim dapibus in. Quisque et purus tincidunt, facilisis massa quis, mollis est. Vestibulum tincidunt dignissim magna at ullamcorper. Donec magna turp@1X.png</p>
-                            </div>
-
-                        </div>
-                        <button class="btn blue-vertical">></button>
-                    </div>
-                    <div class="post shadow my-5 p-3">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 align-self-center">
-                                <h3>Qual 1</h3>
-                                <p>Year 20xx-20xx</p>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <h6>info</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus porta est, sit amet elementum enim dapibus in. Quisque et purus tincidunt, facilisis massa quis, mollis est. Vestibulum tincidunt dignissim magna at ullamcorper. Donec magna turp@1X.png</p>
-                            </div>
-
-                        </div>
-                        <button class="btn blue-vertical">></button>
-                    </div>                                        
-                </div>
-                <div class="tab display-n" id="booked">
-                    <div class="post shadow my-5 p-3">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 align-self-center">
-                                <h3>Qual 1</h3>
-                                <p>Year 20xx-20xx</p>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <h6>info</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus porta est, sit amet elementum enim dapibus in. Quisque et purus tincidunt, facilisis massa quis, mollis est. Vestibulum tincidunt dignissim magna at ullamcorper. Donec magna turp@1X.png</p>
-                            </div>
-
-                        </div>
-                        <button class="btn blue-vertical">></button>
-                    </div>
-                    <div class="post shadow my-5 p-3">
-                        <div class="row">
-                            <div class="col-md-3 align-self-center">
-                                <h3>Bar</h3>
-                                <p>Need a New Bartender</p>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <h6>info</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus porta est, sit amet elementum enim dapibus in. Quisque et purus tincidunt, facilisis massa quis, mollis est. Vestibulum tincidunt dignissim magna at ullamcorper. Donec magna turp@1X.png</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Rate</h6>
-                                <p>SEK 123.0</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Position</h6>
-                                <p>2</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Duration</h6>
-                                <p>14 Days</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p class="text-muted float-right"><small>27 / 02 / 2020</small></p>
-                            </div>
-                        </div>
-                        <button class="btn blue-vertical">></button>
-                    </div>                                        
-                </div>
-                <div class="tab display-n" id="completed">
-                    <div class="post shadow my-5 p-3">
-                        <div class="row">
-                            <div class="col-md-3 align-self-center">
-                                <h3>Bar</h3>
-                                <p>Need a New Bartender</p>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <h6>info</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus porta est, sit amet elementum enim dapibus in. Quisque et purus tincidunt, facilisis massa quis, mollis est. Vestibulum tincidunt dignissim magna at ullamcorper. Donec magna turp@1X.png</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Rate</h6>
-                                <p>SEK 123.0</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Position</h6>
-                                <p>2</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Duration</h6>
-                                <p>14 Days</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p class="text-muted float-right"><small>27 / 02 / 2020</small></p>
-                            </div>
-                        </div>
-                        <button class="btn blue-vertical">></button>
-                    </div>
-                    <div class="post shadow my-5 p-3">
-                        <div class="row">
-                            <div class="col-md-3 align-self-center">
-                                <h3>Bar</h3>
-                                <p>Need a New Bartender</p>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <h6>info</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus porta est, sit amet elementum enim dapibus in. Quisque et purus tincidunt, facilisis massa quis, mollis est. Vestibulum tincidunt dignissim magna at ullamcorper. Donec magna turp@1X.png</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Rate</h6>
-                                <p>SEK 123.0</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Position</h6>
-                                <p>2</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Duration</h6>
-                                <p>14 Days</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p class="text-muted float-right"><small>27 / 02 / 2020</small></p>
-                            </div>
-                        </div>
-                        <button class="btn blue-vertical">></button>
-                    </div>
-                    <div class="post shadow my-5 p-3">
-                        <div class="row">
-                            <div class="col-md-3 align-self-center">
-                                <h3>Bar</h3>
-                                <p>Need a New Bartender</p>
-                            </div>
-                            <div class="col-md-4 align-self-center">
-                                <h6>info</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus porta est, sit amet elementum enim dapibus in. Quisque et purus tincidunt, facilisis massa quis, mollis est. Vestibulum tincidunt dignissim magna at ullamcorper. Donec magna turp@1X.png</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Rate</h6>
-                                <p>SEK 123.0</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Position</h6>
-                                <p>2</p>
-                            </div>
-                            <div class="col-md-1 align-self-center">
-                                <h6>Duration</h6>
-                                <p>14 Days</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p class="text-muted float-right"><small>27 / 02 / 2020</small></p>
-                            </div>
-                        </div>
-                        <button class="btn blue-vertical">></button>
-                    </div>                                        
-                </div>                                
-            </div>
+           
+           
 		</div>
     </div>
 
