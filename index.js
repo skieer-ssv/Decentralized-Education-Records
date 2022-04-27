@@ -15,6 +15,7 @@ const app = express();
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
     res.render('home')
@@ -39,8 +40,8 @@ app.post('/upload', (req, res) => {
         }
 
  
-        // const fileHash = await addFilestoIpfs(fileName, filePath);
-        const fileHash="QmWpJZLshhrsUuxtc8VeTPi7QxaHq6czv53TY4HdkmnkrH";
+        const fileHash = await addFilestoIpfs(fileName, filePath);
+        
         console.log('fileHash: ', fileHash);
         const contractId = await uploadCertificateToContract(studentId,fileHash,fileName);
         fs.unlink(filePath, (err) => {

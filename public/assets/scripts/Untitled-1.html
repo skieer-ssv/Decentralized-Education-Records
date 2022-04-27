@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" type="image/ico" href="./assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
 
-    <title> Certificates</title>
+    <title>Appcruit | DashBoard</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -26,20 +26,72 @@
 
 <body>
 
-    
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i><img src="assets/images/close.svg"></i>
+            </div>
+
+            <div class="sidebar-header text-center">
+            	<div class="d-flex justify-content-center">
+	            	<div class="circle-profile">
+	            		<img src="assets/images/profile-icon.png">
+	            	</div>
+	            </div>
+                <h5>Job Provider</h5>
+                <a href="#">provider@gmail.com</a>
+            </div>
+            <hr class="grey">
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Job</a>
+                </li>
+					<!-- <li>
+                    <a href="#">About</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li> -->
+                <li><a href="#">Chats</a></li>
+                <li><a href="#">Transactions</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help & Support</a></li>
+            </ul>
+
+            <ul class="list-unstyled CTAs mb-0">
+                <li>
+                    <a href="#" class="download">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
     <!-- Page Content  -->
     <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
 
-               
+                <button type="button" id="sidebarCollapse">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-align-justify"></i>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="./assets/images/Logo.png" class="img-fluid" style="height: 50px; width: 50px; margin-left: 100px;">
+                    <img src="assets/images/Logo.png" class="img-fluid" style="height: 50px; width: 50px; margin-left: 100px;">
                  </a>
-                 <h4 style="margin-left: 10px; padding-top: 8px;">All Certificates</h4>
+                 <h4 style="margin-left: 10px; padding-top: 8px;">My Documents</h4>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
@@ -56,7 +108,11 @@
 
     <div class="home">
 		<div class="container">
-           
+            <div class="row category tab-pills">
+                <div class="col-md-4"><button data-toggle="posted" class="pill btn blue-horizontal shadow btn-lg p-3 w-100">Applied</button></div>
+                <div class="col-md-4"><button data-toggle="booked" class="pill btn shadow btn-lg p-3 w-100">Offered</button></div>
+                <div class="col-md-4"><button data-toggle="completed" class="pill btn shadow btn-lg p-3 w-100">Booked</button></div>
+            </div>
 
             <div class="info tab-content">
                 <h1>    StudentId: <%= studentId %></h1>
@@ -65,15 +121,15 @@
                         <div class="post shadow my-5 p-3">
                             <div class="row justify-content-center">
                                 <div class="col-md-3 align-self-center">
-                                    <p><h3> <%= certificate[key].title %> </h3> </p>
+                                    <p><h3>Degree: <%= certificate[key].title %> </h3> </p>
                                     <p>Year 20xx-20xx</p>
                                 </div>
                                 <div class="col-md-4 align-self-center">
-                                 
-                                    <h5><a href="https://ipfs.io/ipfs/<%= certificate[key].ipfsHash  %>">View Certificate</a></h5>
+                                    <h6>info</h6>
+                                    <p>HashLink: <a href="https://ipfs.io/ipfs/<%= certificate[key].ipfsHash  %>"><%= certificate[key].ipfsHash  %></a></p>
                                 </div>
                             </div>
-                        
+                            <button class="btn blue-vertical">></button>
                         </div>
                     <% } %>                                        
                 </div>                                
