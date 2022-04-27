@@ -4,7 +4,8 @@
   "description": "This system stores the educational degrees and certificates on a decentralised network and allows the concerned user to view all the verified certificates together.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index.js"
   },
   "author": "Siddhant Vispute",
   "license": "ISC",
