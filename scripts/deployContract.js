@@ -28,7 +28,7 @@ const input = {
 };
 
 
-    const deployContract = async function () {
+    const deployContract = async function (studentId,studentName,issuingUniversityId) {
         let abi,evm;
         try {
             try {
@@ -44,9 +44,9 @@ const input = {
             const accounts = await web3.eth.getAccounts();
             console.log('Attempting to deploy from account', accounts[0]);
 
-            const result = await new web3.eth.Contract(abi).deploy({ data: evm.bytecode.object, arguments: ["Siddhant Vispute", "FH2018CO005"] }).send({ gas: '1000000', from: accounts[0] });
+            const result = await new web3.eth.Contract(abi).deploy({ data: evm.bytecode.object, arguments: [studentName, studentId,issuingUniversityId] }).send({ gas: '1000000', from: accounts[0] });
             console.log('Contract deployed to ', result.options.address);
-            await uploadtoMongo("sid123",result.options.address);
+            await uploadtoMongo(studentId,result.options.address);
             return result.options.address;
         }
         catch (e) {

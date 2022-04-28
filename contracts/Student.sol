@@ -5,6 +5,7 @@ contract Student{
 struct studentData{
 string  name;
 string id;
+string accountIssuingInstitute;
 }
 
 struct certificate{
@@ -15,9 +16,10 @@ struct certificate{
 studentData s;
 certificate[] c;
 
-constructor (string memory name,string memory studentId  ){
+constructor (string memory name,string memory studentId,string memory accountIssuingInstitute  ){
     s.name = name;
     s.id = studentId;
+    s.accountIssuingInstitute=accountIssuingInstitute;
 }
 
 function addCertificate(string memory title, string memory ipfsHash)public {

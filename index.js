@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
 const fs = require('fs')
-const {deployContract} = require('./scripts/deployContract');
+const deployContract = require('./scripts/deployContract');
 const { addFilestoIpfs, getFileFromIpfs } = require('./scripts/ipfsScript');
 const {getCertificate, uploadCertificateToContract} = require("./scripts/contractFunctions");
 const { uploadtoMongo } = require('./scripts/connectMongo');
@@ -57,12 +57,28 @@ console.log("uri: ",uri);
     })
 })
 
+app.get('/uploadCertificate',(req,res)=>{
+res.render('uploadCertificate');
+});
+
 app.post('/certificate', async (req, res) => {
     const studentId = req.body.studentId;
     certificate = await getCertificate(studentId);
     res.render('studentDetails', {studentId, certificate});
 });
 
+app.get('/newStudent', (req, res) => {
+    res.render('newStudent');
+    console.log('new Student hit');
+});
+
+app.post('/enrollStudent',async(req,res)=>{
+const studentId = req.body.countryCode + req.body.id;
+const {issuingUniversityId,email,studentName}=req.body;
+const contractID = await deployContract(studentId,studentName,issuingUniversityId);
+res.render('enrolled',{studentId,studentName,contractID})
+
+}),
 
 app.listen(PORT, () => {
     console.log('Server is running on port:', PORT)

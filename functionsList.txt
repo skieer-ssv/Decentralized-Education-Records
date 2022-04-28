@@ -1,0 +1,14 @@
+blockchain:
+	compileContract -> returns abi and bytecode
+	deployContract -> returns contract address
+	uploadCertificateToContract -> returns transactionId
+	getCertificatesFromContract -> gets a list of Certificate ipfsHashes from the smart contract
+	
+
+MongoDb
+	connectMongo -> connects client to mongo and prints " connected to MongoDb"
+	getContractId -> returns contractId for the given studentId
+	
+IPFS
+	AddFilesToIpfs -> uploads to ipfs returns CId(ipfsHash)
+	getFileDromIpfs -> given the CId(ipfsHash) returns the file

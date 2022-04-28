@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload | DER</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class=" container">
+        
+
+    <center><h1 >Upload file </h1></center>
+    <div class=" card">
+        <center>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label>Student ID</label>
+        <input type="text" name="studentId">
+        <br><br>
+        <label>Filename</label>
+        <input type="text" name="fileName">
+        <br><br>
+        <input type="file" name="file">
+        <br><br>
+        <input type="submit" value = "Submit">
+    </form>
+</center>
+</div>
+</div>
+</body>
+</html>
