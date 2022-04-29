@@ -21,6 +21,10 @@ app.get('/', (req, res) => {
     res.render('home')
     console.log('home hit')
 });
+app.get('/signin', (req, res) => {
+    res.render('signIn')
+    console.log('signin hit')
+});
 
 app.get('/search', (req, res) => {
     res.render('searchStudent')
@@ -74,7 +78,8 @@ app.get('/newStudent', (req, res) => {
 
 app.post('/enrollStudent',async(req,res)=>{
 const studentId = req.body.countryCode + req.body.id;
-const {issuingUniversityId,email,studentName}=req.body;
+const {email,studentName}=req.body;
+const issuingUniversityId= "MUM012367458241";
 const contractID = await deployContract(studentId,studentName,issuingUniversityId);
 res.render('enrolled',{studentId,studentName,contractID})
 
